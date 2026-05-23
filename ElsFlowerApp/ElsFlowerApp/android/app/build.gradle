@@ -1,0 +1,38 @@
+// android/app/build.gradle
+apply plugin: "com.android.application"
+apply plugin: "com.google.gms.google-services"
+
+android {
+    namespace "com.elsflower"
+    compileSdkVersion 34
+    defaultConfig {
+        applicationId "com.elsflower"
+        minSdkVersion 23
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0.0"
+    }
+    signingConfigs {
+        release {
+            storeFile file('elsflower.keystore')
+            storePassword System.getenv("KEYSTORE_PASSWORD") ?: "elsflower2025"
+            keyAlias "elsflower"
+            keyPassword System.getenv("KEY_PASSWORD") ?: "elsflower2025"
+        }
+    }
+    buildTypes {
+        debug { signingConfig signingConfigs.debug }
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+}
+
+dependencies {
+    implementation("com.facebook.react:react-android")
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-messaging")
+}

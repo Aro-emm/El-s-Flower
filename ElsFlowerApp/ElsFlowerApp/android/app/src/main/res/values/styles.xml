@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#1E2A5E</color>
+    <color name="primary_dark">#141B40</color>
+    <color name="accent">#D4849A</color>
+    <color name="sky">#BDD7EE</color>
+    <color name="white">#FFFFFF</color>
+    <color name="background">#F0F6FB</color>
+
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:statusBarColor">@color/primary</item>
+    </style>
+</resources>
